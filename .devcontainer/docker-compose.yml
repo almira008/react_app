@@ -1,0 +1,19 @@
+version: "3.8"
+
+name: react_sample_project
+services:
+  react:
+    container_name: react
+    build:
+      context: ..
+      dockerfile: .devcontainer/DockerFile
+
+    volumes:
+      # Required to sync file changes.
+      - ..:/workspace:cached
+
+    # Overrides default command so things don't shut down after the process ends.
+    command:
+      - sleep infinity
+
+    # Add "forwardPorts" to **devcontainer.json** to forward db port locally.

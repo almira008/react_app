@@ -1,0 +1,14 @@
+{
+    "name": "React Sample Project",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "react",
+    "workspaceFolder": "/workspace",
+
+    "overrideCommand": true,
+
+    // Remove restriction in git repository
+    "postCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    "forwardPorts": [3000]
+}
